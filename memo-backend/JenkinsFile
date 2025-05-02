@@ -20,7 +20,7 @@ pipeline {
         // Docker 이미지 빌드 및 DockerHub에 푸시
         sh '''
           echo $DOCKERHUB_CRED_PSW | docker login -u $DOCKERHUB_CRED_USR --password-stdin
-          docker build -f Dockerfile.prod -t sororiri/memo-backend:$BUILD_NUMBER .
+          docker build -f Dockerfile.prd -t sororiri/memo-backend:$BUILD_NUMBER .
           docker push sororiri/memo-backend:$BUILD_NUMBER
           rm -rf ./*
         '''

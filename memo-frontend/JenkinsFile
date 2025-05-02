@@ -23,7 +23,7 @@ pipeline {
           docker build \
             --build-arg REACT_APP_BACKEND_URI=https://memoapi.entto.shop \
             -t sororiri/memo-frontend:$BUILD_NUMBER \
-            -f docker/Dockerfile \
+            -f docker/Dockerfile.prd \
             .
           docker push sororiri/memo-frontend:$BUILD_NUMBER
           rm -rf ./*

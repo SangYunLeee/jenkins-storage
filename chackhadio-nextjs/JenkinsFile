@@ -58,7 +58,7 @@ pipeline {
       steps {
         // ArgoCD를 통해 배포 동기화 및 파드 준비 상태 대기
         sh '''
-          argocd login nargo.entto.shop --username ${ARGOCD_CRED_USR} --password ${ARGOCD_CRED_PSW} --grpc-web
+          argocd login nargo.memou.shop --username ${ARGOCD_CRED_USR} --password ${ARGOCD_CRED_PSW} --grpc-web
           argocd app sync ${ARGOCD_APP_NAME}
           argocd app wait ${ARGOCD_APP_NAME} --timeout 600
         '''
